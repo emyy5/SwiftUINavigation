@@ -9,16 +9,33 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationView{
+            VStack {
+                Image(systemName:"house")
+                    .resizable()
+                    .frame(width: 200, height: 200, alignment: .center)
+                    .aspectRatio(contentMode: .fit)
+                    .padding()
+                Text("First Screen")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .foregroundColor(Color.blue)
+                    .padding()
+                NavigationLink(
+                    destination: Text("Seconddd"),
+                    label:{ Text("Continue")
+                            .frame(width: 200, height: 40, alignment: .center)
+                            .background(Color.green)
+                            .foregroundColor(Color.white)
+                            .cornerRadius(8)
+                               }
+                )
+            }
+            .navigationTitle("Home")
+   
         }
-        .padding()
     }
 }
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
